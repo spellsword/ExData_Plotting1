@@ -12,7 +12,8 @@ data[,2]<-as.numeric(data[,2])
 
 
 png("plot1.png", width = 480, height = 480)
-hist(data[,2], , xlab = "Global Active Power(kilowatts)", ylab = "Frequency", col = "red", main = "Global Active Power")
+par(bg="transparent")
+hist(data[,2], , xlab = "Global Active Power (kilowatts)", ylab = "Frequency", col = "red", main = "Global Active Power")
 
 dev.off()
 

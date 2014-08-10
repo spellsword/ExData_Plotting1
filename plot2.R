@@ -13,6 +13,7 @@ data[,2]<-as.numeric(data[,2])
 
 
 png("plot2.png", width = 480, height = 480)
-plot(data[,1], data[,2], type = "l", xlab = "", ylab = "Global Active Power(kilowatts)")
+par(bg="transparent")
+plot(data[,1], data[,2], type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
 
 dev.off()}

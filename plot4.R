@@ -11,6 +11,15 @@ data[,2]<-NULL
 data[,2] <- as.character(data[,2])
 data[,2] <- as.numeric(data[,2])
 
+data[,6] <- as.character(data[,6])
+data[,6] <- as.numeric(data[,6])
+
+data[,7] <- as.character(data[,7])
+data[,7] <- as.numeric(data[,7])
+
+data[,8] <- as.character(data[,8])
+data[,8] <- as.numeric(data[,8])
+
 data$Voltage <- as.character(data$Voltage)
 data$Voltage<-as.numeric(data$Voltage)
 
@@ -18,14 +27,14 @@ data[,3] <- as.character(data[,3])
 data[,3]<-as.numeric(data[,3])
 
 png("plot4.png", width = 480, height = 480)
-par(mfrow = c(2,2))
-plot(data[,1], data[,2], type = "l", xlab = "", ylab = "Global Active Power(kilowatts)")
+par(mfrow = c(2,2), bg="transparent")
+plot(data[,1], data[,2], type = "l", xlab = "", ylab = "Global Active Power")
 plot(data[,1], data$Voltage, type = "l", xlab = "datetime", ylab = "Voltage")
-plot(range(data[,1]), range(1:33),type = "n", xlab = "", ylab = "Energy sub metering")
+plot(range(data[,1]), range(data[,6]),type = "n", xlab = "", ylab = "Energy sub metering")
 lines(data[,1], data[,6], type = "l")
 lines(data[,1], data[,7], type = "l", col="red")
 lines(data[,1], data[,8], type = "l", col="blue")
-legend("topright", legend = c("submetering_1", "submetering_2","submetering_3"), lty = c(1,1,1), lwd=c(2.5,2.5,2.5), col=c("black","red","blue"), bty = "n")
+legend("topright", legend = c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"), lty = c(1,1,1), lwd=c(1.5,1.5,1.5), col=c("black","red","blue"), bty = "n")
 plot(data[,1], data[,3], type = "l", xlab = "datetime", ylab = "Global_reactive_power")
 
 dev.off()
